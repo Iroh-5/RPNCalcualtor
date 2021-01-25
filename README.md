@@ -16,4 +16,4 @@ This is a simple calculator that processes expressions written in *Reverse Polis
 	> A 5 *
 	= 25
 ## Restrictions:
-* all operands and operators in expressions must be separated with any space charater
+* all operands and operators in expressions must be separated with any space character
