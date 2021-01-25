@@ -1,0 +1,111 @@
+﻿#include <iostream>
+#include <string>
+#include <stack>
+#include <unordered_map>
+#include <sstream>
+#include <cctype>
+#include <cmath>
+
+void calculate(std::stringstream& ss)
+{
+	static std::unordered_map<std::string, int> vars;
+	std::stack<double> s;
+	char ch;
+	while (ss >> ch)
+	{
+		if (ch == '+')
+		{
+			double op1 = s.top(); s.pop();
+			double op2 = s.top(); s.pop();
+			s.push(op1 + op2);
+		}
+		else if (ch == '-')
+		{
+			double op1 = s.top(); s.pop();
+			double op2 = s.top(); s.pop();
+			s.push(op2 - op1);
+		}
+		else if (ch == '*')
+		{
+			double op1 = s.top(); s.pop();
+			double op2 = s.top(); s.pop();
+			s.push(op1 * op2);
+		}
+		else if (ch == '/')
+		{
+			double op1 = s.top(); s.pop();
+			double op2 = s.top(); s.pop();
+			s.push(op2 / op1);
+		}
+		else if (ch == '%')
+		{
+			int op1 = static_cast<int>(s.top()); s.pop();
+			int op2 = static_cast<int>(s.top()); s.pop();
+			s.push(op2 % op1);
+		}
+		else if (isalpha(ch))
+		{
+			ss.putback(ch);
+			std::string iStr;
+			ss >> iStr;
+			if (iStr.compare("let") == 0)
+			{
+				double val;
+				ss >> iStr >> ch >> val;
+				vars[iStr] = val;
+				return;
+			}
+			else
+			{
+				if (vars.count(iStr) != 1)
+				{
+					std::cerr << "Undefined identifier" << std::endl;
+					std::terminate();
+				}
+				else
+				{
+					s.push(vars[iStr]);
+				}
+			}
+		}
+		else
+		{
+			ss.putback(ch);
+			double val;
+			ss >> val;
+			s.push(val);
+		}
+	}
+
+	if (s.size() > 1)
+		std::cout << "Invalid syntax" << std::endl;
+	else
+		std::cout << "= " << (!s.empty() ? s.top() : 0) << std::endl;
+}
+
+int main()
+{
+	std::cout << "Enter expression to calculate or 'q' to quit" << std::endl;
+
+	while (true)
+	{
+		char ch;
+		std::string input;
+		std::cout << "> ";
+		getline(std::cin, input);
+		std::stringstream ss(input);
+
+		ss >> ch;
+		if (ch != 'q')
+		{
+			ss.putback(ch);
+			calculate(ss);
+		}
+		else
+		{
+			break;
+		}
+	}
+
+	return 0;
+}
