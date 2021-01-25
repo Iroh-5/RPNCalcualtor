@@ -35,12 +35,22 @@ void calculate(std::stringstream& ss)
 		{
 			double op1 = s.top(); s.pop();
 			double op2 = s.top(); s.pop();
+			if (op1 == 0)
+			{
+				std::cerr << "Division by zero" << std::endl;
+				std::terminate();
+			}
 			s.push(op2 / op1);
 		}
 		else if (ch == '%')
 		{
 			int op1 = static_cast<int>(s.top()); s.pop();
 			int op2 = static_cast<int>(s.top()); s.pop();
+			if (op1 == 0)
+			{
+				std::cerr << "Division by zero" << std::endl;
+				std::terminate();
+			}
 			s.push(op2 % op1);
 		}
 		else if (isalpha(ch))
