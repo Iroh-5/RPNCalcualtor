@@ -1,12 +1,12 @@
-#RPNCalculator\n
-This is a simple calculator that processes expressions written in *Reverse Polish Notation*.\n
-##Supported features:\n
+# RPNCalculator
+This is a simple calculator that processes expressions written in *Reverse Polish Notation*.
+## Supported features:
 * simple operations: +, -, *, /, %(only for ints)
 * variables
-##Features todo:\n
+## Features todo:
 * mathematical functions
 * predefined constants
-##Usage example:\n
+## Usage example:
 '''
 Enter expression to calculate or 'q' to quit:
 > 1 2 + 3 *\n
@@ -17,5 +17,5 @@ Enter expression to calculate or 'q' to quit:
 > A 5 *\n
 = 25\n
 '''
-##Restrictions:\n
+## Restrictions:
 * all operands and operators in expressions must be separated with any space charater
