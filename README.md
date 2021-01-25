@@ -9,13 +9,13 @@ This is a simple calculator that processes expressions written in *Reverse Polis
 ## Usage example:
 '''
 Enter expression to calculate or 'q' to quit:
-> 1 2 + 3 *\n
-= 9\n
-> 6 5 - 2 3 + *\n
-= 5\n
+ > 1 2 + 3 *
+ = 9
+> 6 5 - 2 3 + *
+= 5
 > let A = 5 // syntax to define a variable\n
-> A 5 *\n
-= 25\n
+> A 5 *
+= 25
 '''
 ## Restrictions:
 * all operands and operators in expressions must be separated with any space charater
