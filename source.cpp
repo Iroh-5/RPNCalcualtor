@@ -8,7 +8,7 @@
 
 void calculate(std::stringstream& ss)
 {
-	static std::unordered_map<std::string, int> vars;
+	static std::unordered_map<std::string, double> vars;
 	std::stack<double> s;
 	char ch;
 	while (ss >> ch)
@@ -60,9 +60,9 @@ void calculate(std::stringstream& ss)
 			ss >> iStr;
 			if (iStr.compare("let") == 0)
 			{
-				double val;
+				stdLLString val;
 				ss >> iStr >> ch >> val;
-				vars[iStr] = val;
+				vars[iStr] = atof(val);
 				return;
 			}
 			else
