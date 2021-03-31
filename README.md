@@ -23,3 +23,5 @@ This is a simple calculator that processes expressions written in *Reverse Polis
 	= 1024
 ## Restrictions:
 * all operands and operators in expressions must be separated with any space character
+## Compilation requirements:
+* compile with *-std=c++17*
