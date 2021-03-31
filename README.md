@@ -14,5 +14,12 @@ This is a simple calculator that processes expressions written in *Reverse Polis
 	> let A = 5 // syntax to define a variable
 	> A 5 *
 	= 25
+	> let r = 3.5
+	> PI r * r *
+	= 38.48451001
+	> 25 sqrt
+	= 5
+	> 2 10 pow
+	= 1024
 ## Restrictions:
 * all operands and operators in expressions must be separated with any space character
