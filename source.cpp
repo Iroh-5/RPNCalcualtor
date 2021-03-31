@@ -6,9 +6,10 @@
 #include <cctype>
 #include <cmath>
 
+std::unordered_map<std::string, double> vars;
+
 void calculate(std::stringstream& ss)
 {
-	static std::unordered_map<std::string, double> vars;
 	std::stack<double> s;
 	char ch;
 	while (ss >> ch)
@@ -60,9 +61,9 @@ void calculate(std::stringstream& ss)
 			ss >> iStr;
 			if (iStr.compare("let") == 0)
 			{
-				stdLLString val;
+				std::string val;
 				ss >> iStr >> ch >> val;
-				vars[iStr] = atof(val);
+				vars[iStr] = atof(val.c_str());
 				return;
 			}
 			else
@@ -96,6 +97,9 @@ void calculate(std::stringstream& ss)
 int main()
 {
 	std::cout << "Enter expression to calculate or 'q' to quit" << std::endl;
+
+	vars["PI"] = 3.14159265359;
+	vars["E"]  = 2.7182818284;
 
 	while (true)
 	{
