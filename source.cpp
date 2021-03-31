@@ -134,7 +134,7 @@ void calculate(std::stringstream& ss)
 
 int main()
 {
-	std::cout << "Enter expression to calculate or 'q' to quit" << std::endl;
+	std::cout << "Enter expression to calculate or 'q' to quit:" << std::endl;
 
 	vars["PI"]  = 3.14159265359;
 	vars["E"]   = 2.71828182845;
