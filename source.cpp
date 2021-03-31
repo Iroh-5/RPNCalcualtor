@@ -129,15 +129,16 @@ void calculate(std::stringstream& ss)
 	if (s.size() > 1)
 		std::cout << "Invalid syntax" << std::endl;
 	else
-		std::cout << std::setprecision(10) << "= " << (!s.empty() ? s.top() : 0) << std::endl;
+		std::cout << std::setprecision(11) << std::fixed << "= " << (!s.empty() ? s.top() : 0) << std::endl;
 }
 
 int main()
 {
 	std::cout << "Enter expression to calculate or 'q' to quit" << std::endl;
 
-	vars["PI"] = 3.14159265359;
-	vars["E"]  = 2.7182818284;
+	vars["PI"]  = 3.14159265359;
+	vars["E"]   = 2.71828182845;
+	vars["PHI"] = 1.61803398874; // golden ration
 
 	while (true)
 	{
