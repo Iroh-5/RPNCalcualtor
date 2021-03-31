@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <stack>
 #include <unordered_map>
@@ -7,22 +7,6 @@
 #include <cmath>
 #include <functional>
 #include <iomanip>
-
-/*
-*	double exp(double)
-*	double log(double)
-*	double log2(double)
-*	double log10(double)
-*	double sqrt(double)
-*	double cbrt(double)
-*	double sin(double)
-*	double cos(double)
-*	double tan(double)
-*	double asin(double)
-*	double acos(double)
-*	double atan(double)
-*	double pow(double, double)
-*/
 
 [[noreturn]] void error(const std::string& message)
 {
