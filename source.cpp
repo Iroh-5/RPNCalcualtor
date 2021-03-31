@@ -8,12 +8,6 @@
 #include <functional>
 #include <iomanip>
 
-[[noreturn]] void error(const std::string& message)
-{
-	std::cerr << message << std::endl;
-	std::terminate();
-}
-
 std::unordered_map<std::string, double> vars;
 std::unordered_map<std::string, std::function<double(double)>> funcs =
 {
@@ -61,7 +55,8 @@ void calculate(std::stringstream& ss)
 			double op2 = s.top(); s.pop();
 			if (op1 == 0)
 			{
-				error("Division by zero");
+				std::cerr << "Division by zero" << std::endl;
+				return;
 			}
 			s.push(op2 / op1);
 		}
@@ -71,7 +66,8 @@ void calculate(std::stringstream& ss)
 			int op2 = static_cast<int>(s.top()); s.pop();
 			if (op1 == 0)
 			{
-				error("Division by zero");
+				std::cerr << "Division by zero" << std::endl;
+				return;
 			}
 			s.push(op2 % op1);
 		}
